@@ -112,7 +112,7 @@ export default function HomePage({ navigate }: Props) {
                   alt="Quem Somos"
                   loading="lazy"
                   decoding="async"
-                  className="w-full h-[560px] object-cover"
+                  className="w-full h-[560px] object-cover object-top"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-primary-950 text-white px-8 py-6 hidden md:block">
                   <p className="font-display text-4xl font-semibold">12+</p>
