@@ -108,7 +108,7 @@ export default function HomePage({ navigate }: Props) {
             <div className={`anim-l ${aboutV ? 'show' : ''}`}>
               <div className="relative">
                 <img
-                  src="/img/casa-1-terras-alpha.webp"
+                  src="/img/novais-42.jpg"
                   alt="Quem Somos"
                   loading="lazy"
                   decoding="async"
