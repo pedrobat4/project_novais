@@ -52,7 +52,7 @@ export default function HomePage({ navigate }: Props) {
       <section id="sobre" className="relative h-screen flex flex-col justify-center overflow-hidden" style={{ backgroundColor: 'rgb(81,100,71)' }}>
         {/* Background image */}
         <img
-          src="/img/hero-novais.png"
+          src="/img/hero-novais.jpg"
           alt=""
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover object-center"
