@@ -20,29 +20,6 @@ function useInView(t = 0.1) {
   return { ref, visible: v };
 }
 
-/* ── animated counter ── */
-function CountUp({ to, suffix = '', ms = 1800 }: { to: number; suffix?: string; ms?: number }) {
-  const [n, setN] = useState(0);
-  const { ref, visible } = useInView(0.3);
-  useEffect(() => {
-    if (!visible) return;
-    let x = 0;
-    const step = to / (ms / 16);
-    const t = setInterval(() => {
-      x += step; if (x >= to) { setN(to); clearInterval(t); } else setN(Math.floor(x));
-    }, 16);
-    return () => clearInterval(t);
-  }, [visible, to, ms]);
-  return <span ref={ref}>{n}{suffix}</span>;
-}
-
-const stats = [
-  { to: 9,   suffix: '+', label: 'Anos de Excelência' },
-  { to: 388, suffix: '+', label: 'Famílias Felizes' },
-  { to: 38,  suffix: '+', label: 'Projetos Entregues' },
-  { to: 76,  suffix: '%', label: 'Satisfação Total' },
-];
-
 const pillars = [
   { icon: Award, title: 'Excelência', desc: '12 anos de história e mais de 50 projetos entregues com padrão incomparável' },
   { icon: Shield, title: 'Segurança', desc: 'Garantia total com seguro obra e 5 anos de cobertura estrutural' },
@@ -72,7 +49,7 @@ export default function HomePage({ navigate }: Props) {
   return (
     <div className="page-enter">
       {/* ── HERO ── */}
-      <section id="sobre" className="relative min-h-screen flex flex-col justify-end overflow-hidden bg-primary-950">
+      <section id="sobre" className="relative h-screen flex flex-col justify-center overflow-hidden" style={{ backgroundColor: 'rgb(81,100,71)' }}>
         {/* Background image */}
         <img
           src="/img/hero-novais.png"
@@ -80,17 +57,20 @@ export default function HomePage({ navigate }: Props) {
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-950/60 via-primary-950/40 to-primary-950/80" />
+        {/* Green overlay */}
+        <div
+          className="absolute inset-0"
+          style={{ background: 'linear-gradient(to bottom, rgba(81,100,71,0.55) 0%, rgba(91,116,88,0.35) 50%, rgba(81,100,71,0.80) 100%)' }}
+        />
         {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pb-0">
-          <div className="pt-40 pb-20 max-w-3xl">
+        <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
             <p className="section-label text-gold-400 mb-5 tracking-[0.25em]">Novais Incorporações</p>
             <h1 className="font-display text-7xl md:text-8xl lg:text-9xl font-semibold text-white leading-[0.9] mb-6">
               Alto Padrão<br />
               <span className="text-gradient-gold italic">Redefinido</span>
             </h1>
-            <p className="text-white/70 text-lg md:text-xl font-light leading-relaxed max-w-xl mb-10">
+            <p className="text-white/80 text-lg md:text-xl font-light leading-relaxed max-w-xl mb-10">
               Onde arquitetura excepcional, tecnologia de ponta e design sofisticado convergem para criar empreendimentos únicos em Montes Claros
             </p>
             <div className="flex flex-wrap gap-4 mb-4">
@@ -107,29 +87,13 @@ export default function HomePage({ navigate }: Props) {
                 Conheça a Novais
               </button>
             </div>
-            <p className="text-white/40 text-sm">Tecnologia inteligente, automação e atendimento personalizado em todos os projetos.</p>
-          </div>
-        </div>
-
-        {/* Stats bar */}
-        <div className="relative z-10 bg-primary-950/80 backdrop-blur-md border-t border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-              {stats.map(({ to, suffix, label }) => (
-                <div key={label} className="text-center">
-                  <p className="font-display text-4xl md:text-5xl font-semibold text-white">
-                    <CountUp to={to} suffix={suffix} />
-                  </p>
-                  <p className="text-white/50 text-xs mt-1 tracking-wide">{label}</p>
-                </div>
-              ))}
-            </div>
+            <p className="text-white/50 text-sm">Tecnologia inteligente, automação e atendimento personalizado em todos os projetos.</p>
           </div>
         </div>
 
         <button
           onClick={() => document.getElementById('quem-somos')?.scrollIntoView({ behavior: 'smooth' })}
-          className="absolute bottom-28 right-8 text-white/40 hover:text-white/80 transition-colors hidden md:block"
+          className="absolute bottom-8 right-8 text-white/40 hover:text-white/80 transition-colors hidden md:block"
           aria-label="scroll"
         >
           <ChevronDown size={24} className="animate-bounce" />
