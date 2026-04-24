@@ -59,9 +59,9 @@ export default function About() {
               Uma empresa sólida de Montes Claros, fundada por Gustavo Novais, que une tradição e inovação para transformar o mercado da construção civil.
             </p>
             <div className="flex flex-wrap gap-4">
-              <a href="https://www.novaisempreendimentos.com.br/projetos" target="_blank" rel="noopener noreferrer" className="btn-primary flex items-center gap-2">
+              <button onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })} className="btn-primary flex items-center gap-2">
                 Conheça Nossos Projetos <ArrowRight size={18} />
-              </a>
+              </button>
               <button onClick={() => document.getElementById('legado')?.scrollIntoView({ behavior: 'smooth' })} className="btn-outline">
                 Nossa História
               </button>
@@ -203,9 +203,9 @@ export default function About() {
             <button onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })} className="btn-primary">
               Entre em Contato
             </button>
-            <a href="https://www.novaisempreendimentos.com.br/projetos" target="_blank" rel="noopener noreferrer" className="btn-outline">
+            <button onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })} className="btn-outline">
               Ver Projetos
-            </a>
+            </button>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
+import type { PageType } from '../App';
 
 const contactInfo = [
   { icon: Phone, label: 'Telefone',  value: '(38) 98404-0697',                       href: 'tel:+5538984040697' },
@@ -11,7 +12,7 @@ const contactInfo = [
 
 const subjects = ['Empreendimento residencial', 'Obra comercial', 'Licitação pública', 'Parceria', 'Outros'];
 
-export default function Contact() {
+export default function Contact({ navigate }: { navigate: (page: PageType) => void }) {
   const { ref: heroRef, visible: heroV } = useInView(0.1);
   const { ref: formRef, visible: formV } = useInView(0.1);
   const [form, setForm] = useState({ name: '', phone: '', email: '', subject: '', message: '' });
@@ -159,9 +160,9 @@ export default function Contact() {
         <div className="max-w-2xl mx-auto px-4">
           <h2 className="font-display text-4xl font-semibold text-white mb-4">Pronto Para Começar?</h2>
           <p className="text-white/45 font-light mb-8">Nossa equipe está pronta para atender você</p>
-          <a href="https://www.novaisempreendimentos.com.br/projetos" target="_blank" rel="noopener noreferrer" className="btn-outline-white">
+          <button onClick={() => navigate('projetos')} className="btn-outline-white">
             Ver Nossos Projetos
-          </a>
+          </button>
         </div>
       </div>
     </section>

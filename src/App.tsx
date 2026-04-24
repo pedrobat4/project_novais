@@ -55,11 +55,11 @@ export default function App() {
         {currentPage === 'projetos' && (
           <ProjectsPage navigate={navigate} />
         )}
-        {currentPage === 'tecnologia' && <Technology />}
+        {currentPage === 'tecnologia' && <Technology navigate={navigate} />}
         {currentPage === 'compromisso' && <Commitment />}
         {currentPage === 'sustentabilidade' && <Sustainability />}
         {currentPage === 'licitacoes' && <Licitacoes />}
-        {currentPage === 'contato' && <Contact />}
+        {currentPage === 'contato' && <Contact navigate={navigate} />}
         {currentPage === 'project-detail' && route.page === 'project-detail' && (
           <ProjectDetailPage id={route.id} navigate={navigate} />
         )}

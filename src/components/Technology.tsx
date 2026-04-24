@@ -1,5 +1,6 @@
 import { Smartphone, Shield, Zap, Lightbulb, Thermometer, Lock } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
+import type { PageType } from '../App';
 
 const solutions = [
   {
@@ -41,7 +42,7 @@ const metrics = [
   { value: '37+', label: 'Dispositivos IoT' },
 ];
 
-export default function Technology() {
+export default function Technology({ navigate }: { navigate: (page: PageType) => void }) {
   const { ref: heroRef, visible: heroVisible } = useInView(0.1);
   const { ref: solRef, visible: solVisible } = useInView(0.08);
   const { ref: featRef, visible: featVisible } = useInView(0.15);
@@ -151,9 +152,9 @@ export default function Technology() {
           <h2 className="font-display text-5xl font-semibold text-white mb-4">Viva o Futuro Hoje</h2>
           <p className="text-white/45 font-light mb-10">Conheça nossos empreendimentos inteligentes</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="https://www.novaisempreendimentos.com.br/projetos" target="_blank" rel="noopener noreferrer" className="btn-primary bg-gold-500 hover:bg-gold-600">
+            <button onClick={() => navigate('projetos')} className="btn-primary bg-gold-500 hover:bg-gold-600">
               Ver Projetos Inteligentes
-            </a>
+            </button>
             <button onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })} className="btn-outline-white">
               Agendar Demo
             </button>
