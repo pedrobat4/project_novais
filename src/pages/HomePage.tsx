@@ -72,7 +72,16 @@ export default function HomePage({ navigate }: Props) {
   return (
     <div className="page-enter">
       {/* ── HERO ── */}
-      <section id="sobre" className="relative min-h-screen flex flex-col justify-end overflow-hidden hero-gradient">
+      <section id="sobre" className="relative min-h-screen flex flex-col justify-end overflow-hidden bg-primary-950">
+        {/* Background image */}
+        <img
+          src="/img/hero-novais.png"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-primary-950/60 via-primary-950/40 to-primary-950/80" />
         {/* Content */}
         <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pb-0">
           <div className="pt-40 pb-20 max-w-3xl">

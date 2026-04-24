@@ -122,7 +122,7 @@ export default function Footer({ navigate }: Props) {
 
         <div className="border-t border-white/8 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-white/20 text-xs font-light">
-            © 2025 Novais Empreendimentos. Todos os direitos reservados.
+            © 2026 Novais Empreendimentos. Todos os direitos reservados.
           </p>
           <div className="flex items-center gap-6">
             <button className="text-white/20 hover:text-white/50 text-xs font-light transition-colors">
