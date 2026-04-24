@@ -154,15 +154,15 @@ export default function HomePage({ navigate }: Props) {
       </section>
 
       {/* ── PILARES ── */}
-      <section id="pilares" className="section-green py-28">
+      <section id="pilares" className="hero-gradient py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <p className="section-label text-primary-500 mb-4">Por Que Escolher a Novais</p>
+            <p className="section-label text-gold-500 mb-4">Por Que Escolher a Novais</p>
             <div className="divider mx-auto mb-6" />
-            <h2 className="font-display text-5xl md:text-6xl font-semibold text-primary-800 mb-4">
+            <h2 className="font-display text-5xl md:text-6xl font-semibold text-white mb-4">
               Nossos Pilares
             </h2>
-            <p className="text-primary-600/70 font-light max-w-lg mx-auto">
+            <p className="text-white/50 font-light max-w-lg mx-auto">
               Compromissos que nos tornam referência em alto padrão
             </p>
           </div>
@@ -171,14 +171,14 @@ export default function HomePage({ navigate }: Props) {
             {pillars.map(({ icon: Icon, title, desc }, i) => (
               <div
                 key={title}
-                className={`group bg-white border border-primary-100 hover:border-gold-500/60 hover:shadow-lg p-8 transition-all duration-400 cursor-default anim ${pillarsV ? 'show' : ''}`}
+                className={`group border border-white/10 hover:border-gold-500/50 p-8 transition-all duration-400 cursor-default anim ${pillarsV ? 'show' : ''}`}
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
-                <div className="w-12 h-12 rounded-full border border-primary-200 group-hover:border-gold-500/60 flex items-center justify-center mb-6 transition-colors">
-                  <Icon size={20} className="text-primary-500 group-hover:text-gold-500 transition-colors" />
+                <div className="w-12 h-12 rounded-full border border-white/20 group-hover:border-gold-500/50 flex items-center justify-center mb-6 transition-colors">
+                  <Icon size={20} className="text-white/50 group-hover:text-gold-400 transition-colors" />
                 </div>
-                <h3 className="font-display text-2xl font-semibold text-primary-800 mb-3">{title}</h3>
-                <p className="text-primary-600/70 text-sm leading-relaxed font-light">{desc}</p>
+                <h3 className="font-display text-2xl font-semibold text-white mb-3">{title}</h3>
+                <p className="text-white/45 text-sm leading-relaxed font-light">{desc}</p>
               </div>
             ))}
           </div>
