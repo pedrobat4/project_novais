@@ -60,7 +60,7 @@ export default function HomePage({ navigate }: Props) {
         {/* Green overlay */}
         <div
           className="absolute inset-0"
-          style={{ background: 'linear-gradient(to bottom, rgba(81,100,71,0.55) 0%, rgba(91,116,88,0.35) 50%, rgba(81,100,71,0.80) 100%)' }}
+          style={{ background: 'linear-gradient(to bottom, rgba(81,100,71,0.72) 0%, rgba(91,116,88,0.55) 50%, rgba(81,100,71,0.90) 100%)' }}
         />
         {/* Content */}
         <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
