@@ -32,13 +32,6 @@ const pillars = [
   },
 ];
 
-const stats = [
-  { value: '100%', label: 'Satisfação Clientes', sub: 'Índice de aprovação total' },
-  { value: '15+',  label: 'Prêmios',             sub: 'Reconhecimento do setor' },
-  { value: '0',    label: 'Acidentes',            sub: 'Segurança impecável' },
-  { value: '98%',  label: 'Recomendação',         sub: 'Clientes que indicam' },
-];
-
 const process = [
   { step: '01', title: 'Planejamento', items: ['Análise detalhada do projeto', 'Seleção de fornecedores', 'Aprovação de materiais', 'Cronograma executivo'] },
   { step: '02', title: 'Execução',     items: ['Supervisão constante', 'Fiscalização técnica', 'Testes de qualidade', 'Relatórios semanais'] },
@@ -48,7 +41,6 @@ const process = [
 export default function Commitment() {
   const { ref: heroRef,    visible: heroV }    = useInView(0.1);
   const { ref: pillarsRef, visible: pillarsV } = useInView(0.06);
-  const { ref: statsRef,   visible: statsV }   = useInView(0.15);
   const { ref: processRef, visible: processV } = useInView(0.1);
 
   return (
@@ -100,28 +92,6 @@ export default function Commitment() {
                     ))}
                   </ul>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Stats */}
-      <div className="bg-primary-950 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="font-display text-4xl font-semibold text-white">Números que comprovam nossa excelência</h2>
-          </div>
-          <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((s, i) => (
-              <div
-                key={s.label}
-                className={`text-center anim ${statsV ? 'show' : ''}`}
-                style={{ transitionDelay: `${i * 100}ms` }}
-              >
-                <p className="font-display text-5xl font-semibold text-white mb-2">{s.value}</p>
-                <p className="text-gold-400 font-medium text-sm mb-1">{s.label}</p>
-                <p className="text-white/30 text-xs font-light">{s.sub}</p>
               </div>
             ))}
           </div>
